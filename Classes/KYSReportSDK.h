@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)runEnvironment:(KYSEnvironment)environment;
 
-/// 设置心跳周期
+/// 设置心跳周期     
 /// @note 心跳必须设置
 /// @param time 多少时间进行心跳上报 ( 传入 0，则为默认的30s )
 /// @param callBack   单次心跳将要上报的回调，返回当前心跳的pageId；返回值传入心跳的扩展数据

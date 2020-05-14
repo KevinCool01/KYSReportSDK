@@ -70,7 +70,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy) NSString * pageName; /**< 页面名称，英文字母格式，不能有中文或特殊字符*/
 @property (nonatomic, copy) NSString * pageType;/**< 页面类型 */
 @property (nonatomic, assign) NSTimeInterval netWorkTime ;/**< 请求出网络数据的时间，秒*/
-@property (nonatomic, copy) NSDictionary * extMap;/**< 扩展数据*/
+@property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据*/
 @end
 
 @interface KYSClick : KYSModel
@@ -80,7 +80,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy) NSString * targetId;/**< 对应内容id*/
 @property (nonatomic, copy) NSString * targetName;/**< 对应内容名称*/
 @property (nonatomic, copy) NSString * targetType;/**< 对应内容类型*/
-@property (nonatomic, copy) NSDictionary * extMap;/**< 扩展数据map*/
+@property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据map*/
 @end
 
 @interface KYSExposure : KYSModel
@@ -89,19 +89,19 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy) NSString * targetId;/**< 对应内容id（专题id/影片id/频道id/广告id*/
 @property (nonatomic, copy) NSString * targetName;/**< 对应内容名称（专题名称/影片名称/频道名称/广告名称）*/
 @property (nonatomic, copy) NSString * targetType;/**< 对应内容类型（专题topic/影片video/频道channel/广告ad*/
-@property (nonatomic, copy) NSDictionary * extMap;/**< 扩展数据map*/
+@property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据map*/
 @end
 
 @interface KYSError : KYSModel
 @property (nonatomic, copy) NSString * errorType;/**< 错误类型*/
 @property (nonatomic, copy) NSString * errorCode;/**< 错误码*/
 @property (nonatomic, copy) NSString * errorDesc;/**< 错误描述*/
-@property (nonatomic, copy) NSDictionary * extMap;/**< 扩展数据map */
+@property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据map */
 @end
 
 @interface KYSCustomer : KYSModel
 @property (nonatomic, copy) NSString * eventType;/**< 自定义事件类型*/
-@property (nonatomic, copy) NSDictionary * extMap;/**< 扩展数据map {goodsId:123,goodsName:oppo手机,goodsPrice:2300} */
+@property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据map {goodsId:123,goodsName:oppo手机,goodsPrice:2300} */
 @end
 
 NS_ASSUME_NONNULL_END
