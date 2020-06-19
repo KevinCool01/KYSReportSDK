@@ -98,7 +98,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)beginExposure:(KYSExposure *)exposure;
 /// 页面某个item滑出屏幕，结束曝光
 + (void)endExposure:(KYSExposure *)exposure;
-/// 曝光数据的上报，手动上报曝光数据，SDK在页面结束访问的时候会进行曝光上报，也可以在某个时刻自己调用一次曝光上报
+/// 手动上报曝光数据。(SDK在页面结束访问的时候会自动上报当前页面的曝光数据，无需调用此方法，如果需要在某个时刻自己想调用一次，再调用，一般不使用此方法，正常埋点即可)
 + (void)exposureReportWithComplete:(nullable ReportComplete)complete;
 /// 页面请求错误，上报一个错误
 + (void)error:(KYSError *)error reportWithComplete:(nullable ReportComplete)complete;
