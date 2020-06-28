@@ -20,11 +20,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 设置 SDK 的运行环境
 /// @note 必须设置运行环境， KYSEnvironmentNone 不能运行，需要选择开发环境或者生产环境
+/// 测试地址: http://120.205.22.111:9797/pb/
+/// 正式地址：http://api.yunjibda.com:8081/pb/
 /// @param environment 默认为 KYSEnvironmentNone
-
 + (void)runEnvironment:(KYSEnvironment)environment;
 
-/// 设置心跳周期     
+/// 设置 SDK 的运行环境，同时可携带自己上报地址 
+/// @note 如果需要使用默认地址调用  - (void) runEnvironment:(KYSEnvironment)environment 即可，需要自己配置上报地址，调用此方法。
+/// @param environment 默认为 KYSEnvironmentNone，如果设置KYSEnvironmentNone，host 无论传什么值都为 nil
+/// @param host 上报地址
++ (void)runEnvironment:(KYSEnvironment)environment withHost:(NSString *)host;
+
+/// 设置心跳周期
 /// @note 心跳必须设置
 /// @param time 多少时间进行心跳上报 ( 传入 0，则为默认的30s )
 /// @param callBack   单次心跳将要上报的回调，返回当前心跳的pageId；返回值传入心跳的扩展数据
