@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, KYSEnvironment) {
@@ -62,6 +61,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy, nullable) NSString * adderss;/**< 详细地址*/
 @property (nonatomic, copy, nullable) NSString * longitude;/**< 经度*/
 @property (nonatomic, copy, nullable) NSString * latitude;/**< 纬度*/
+@property (nonatomic, copy, nullable) NSString * lang; /**< 语言*/
 @property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据*/
 @end
 
@@ -69,7 +69,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy) NSString * pageId;/**<页面的唯一标识符*/
 @property (nonatomic, copy) NSString * pageName; /**< 页面名称，英文字母格式，不能有中文或特殊字符*/
 @property (nonatomic, copy) NSString * pageType;/**< 页面类型 */
-@property (nonatomic, assign) NSTimeInterval netWorkTime ;/**< 请求出网络数据的时间，秒*/
+@property (nonatomic, assign) NSTimeInterval netWorkTime ;/**< 请求出网络数据的时间戳，毫秒*/
 @property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据*/
 @end
 
