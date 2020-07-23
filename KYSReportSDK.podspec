@@ -21,7 +21,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/KevinCool01/KYSReportSDK.git", :tag => "#{s.version}" }
   s.source_files = "Classes/*.{h,m}"
   s.public_header_files = "Classes/*.h"
-  s.frameworks = "Foundation", "UIKit", "CoreTelephony", "AdSupport", "Security", "SystemConfiguration", "libsqlite3.0"
+  s.frameworks = "Foundation", "UIKit", "CoreTelephony", "AdSupport", "Security", "SystemConfiguration"
+  s.libraries = "sqlite3"
   s.vendored_libraries = "Libraries/libKYSReportSDK.a"
   s.dependency "Protobuf"
 
