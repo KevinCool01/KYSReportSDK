@@ -44,6 +44,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property(nonatomic, copy) NSString * ip; /**< exp: 127.0.0.1*/
 @property(nonatomic, copy) NSString * operators;/**< 运营商 exp: 中国移动 */
 @property(nonatomic, copy) NSString * sdkVersion;/**<  sdk 的版本*/
+@property(nonatomic, copy) NSString * apiVersion;/**< 上报地址的接口参数sdkVersion*/
 @property(nonatomic, copy) NSDictionary * extMap;/**< 扩展数据map*/
 @end
 

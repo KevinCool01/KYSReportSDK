@@ -107,6 +107,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 页面退出 (页面退出上报的同时，会进行曝光数据的上报)
 + (void)pageExit:(KYSPage *)page reportWithComplete:(nullable ReportComplete)complete;
 
+/// 单独设置页面事件的dataMap的值
++ (void)setPageExtMapValue:(NSString *)value forKey:(NSString *)key byPageId:(NSString *)pageId;
+
 /// 点击事件
 + (void)click:(KYSClick *)click reportWithComplete:(nullable ReportComplete)complete;
 
