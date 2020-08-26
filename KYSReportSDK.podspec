@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KYSReportSDK"
-  s.version      = "2.0.2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+  s.version      = "2.1.0"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
   s.summary      = "Xingjiang CBC scientific research big data iOS SDK"
   s.homepage     = "https://github.com/KevinCool01/KYSReportSDK"
   s.license      = "MIT"
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/KevinCool01/KYSReportSDK.git", :tag => "#{s.version}" }
   s.source_files = "Classes/*.{h,m}"
   s.public_header_files = "Classes/*.h"
-  s.frameworks = "Foundation", "UIKit", "CoreTelephony", "AdSupport", "Security", "SystemConfiguration"
+  s.frameworks = "Foundation", "UIKit", "CoreTelephony", "Security", "SystemConfiguration"
   s.libraries = "sqlite3"
   s.vendored_libraries = "Libraries/libKYSReportSDK.a"
   s.dependency "Protobuf"

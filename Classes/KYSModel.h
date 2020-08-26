@@ -27,6 +27,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property(nonatomic, copy) NSString * randomId;/**< 客户端一次开启到关闭完整流程标识，web一次访问流程标识*/
 @property(nonatomic, copy) NSString * device;/**< exp: iphone6s*/
 @property(nonatomic, copy) NSString * deviceId;/**< 设备唯一标示符，必填项 */
+@property(nonatomic, copy) NSString * deviceIdV2;/**< 设备的广告标识符 IDFA*/
 @property(nonatomic, copy) NSString * deviceType;/**< 设备类型（Phone/Pad/PC）*/
 @property(nonatomic, copy) NSString * system;/**< exp: ios or android or h5 or pc*/
 @property(nonatomic, copy) NSString * systemVersion;/**< exp: 10.1.0*/
@@ -34,7 +35,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property(nonatomic, copy) NSString * userId;/**< 已登录用户必填*/
 @property(nonatomic, copy) NSString * userType;/**< 用户类型（webchat，qq，phone），已登录用户必填 */
 @property(nonatomic, copy) NSString * userLabels;/**< 用户标签，数组形式上报   exp: ['少儿'，'游戏','动漫'] */
-@property(nonatomic, copy) NSString * userRegisterTime;/**< 用户注册时间*/
+@property(nonatomic, assign) NSTimeInterval userRegisterTime;/**< 用户注册时间，毫秒级的时间戳*/
 @property(nonatomic, copy) NSString * userRegisterVersion;/**< 用户注册版本号 */
 @property(nonatomic, copy) NSString * appVersion;/**< exp: 5.1.0 */
 @property(nonatomic, copy) NSString * appChannel;/**< exp: appstore */
@@ -52,7 +53,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy, nullable) NSString * userId;/**< 用户ID*/
 @property (nonatomic, copy, nullable) NSString * userType;/**< 用户类型（webchat，qq，phone），已登录用户必填*/
 @property (nonatomic, copy, nullable) NSMutableArray * userLabels;/**< 用户标签，数组形式上报   exp: ['少儿'，'游戏','动漫'] */
-@property (nonatomic, copy, nullable) NSString * userRegisterTime;/**< 用户注册时间 */
+@property (nonatomic, assign) NSTimeInterval userRegisterTime;/**< 用户注册时间，毫秒级的时间戳 */
 @property (nonatomic, copy, nullable) NSString * userRegisterVersion;/**<  用户注册版本号*/
 @property (nonatomic, copy, nullable) NSString * country;/**< 国家*/
 @property (nonatomic, copy, nullable) NSString * province;/**< 省份*/

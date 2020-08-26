@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setUserLabels:(nullable NSArray *)labels;
 + (void)addUserLabel:(nullable NSString *)userLabel;
 + (void)removeUserLabel:(nullable NSString *)userLabel;
-+ (void)setUserRegisterTime:(nullable NSString *)userRegisterTime;
++ (void)setUserRegisterTime:(NSTimeInterval)userRegisterTime;
 + (void)setUserRegisterVersion:(nullable NSString *)userRegisterVersion;
 + (void)setCountry:(nullable NSString *)country;
 + (void)setProvince:(nullable NSString *)province;
@@ -145,7 +145,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param userId 用户ID
 /// @param userType 用户类型（webchat，qq，phone）
 /// @param userLabels 用户标签，数组形式上报   exp: ['少儿'，'游戏','动漫']
-/// @param userRegisterTime 用户注册时间
+/// @param userRegisterTime 用户注册时间，毫秒级的时间戳
 /// @param userRegisterVersion 用户注册版本号
 /// @param country 国家
 /// @param province 省份
@@ -156,7 +156,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (KYSUserInfo *)modelWithUserId:(NSString *)userId
                         userType:(NSString *)userType
                       userLabels:(nullable NSArray *)userLabels
-                userRegisterTime:(NSString *)userRegisterTime
+                userRegisterTime:(NSTimeInterval)userRegisterTime
              userRegisterVersion:(nullable NSString *)userRegisterVersion
                          country:(nullable NSString *)country
                         province:(nullable NSString *)province
