@@ -83,6 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setLatitude:(nullable NSString *)latitude;
 + (void)setLang:(nullable NSString *)lang;
 + (void)setBaseMap:(nullable NSDictionary *)baseMap;
++ (void)setDeviceType:(nullable NSString *)deviceType;
 
 /// 清除用户信息, 当用户退出登录的时候，可能要清除用户的信息
 /// @note 会清除用户的userId, userType, userLabel, userRegisterTime, userRegisterVersion
