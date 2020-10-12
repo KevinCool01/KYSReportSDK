@@ -84,6 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setLang:(nullable NSString *)lang;
 + (void)setBaseMap:(nullable NSDictionary *)baseMap;
 + (void)setDeviceType:(nullable NSString *)deviceType;
++ (void)setDeviceToken:(nullable NSData *)deviceToken onParty:(KYSApns)party;
 
 /// 清除用户信息, 当用户退出登录的时候，可能要清除用户的信息
 /// @note 会清除用户的userId, userType, userLabel, userRegisterTime, userRegisterVersion
@@ -100,6 +101,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 清除自定义设置的扩展 map 信息
 /// @note 会清除 baseMap
 + (void)clearBaseMap;
+
+/// 清除某个平台的设置的deviceToken
++ (void)clearDeviceTokenOnParty:(KYSApns)party;
+
+/// 清除全部的deviceToken
++ (void)clearAllDeviceToken;
 
 #pragma mark -- 大数据上报事件
 /// 页面访问

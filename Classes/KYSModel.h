@@ -14,6 +14,11 @@ typedef NS_ENUM(NSInteger, KYSEnvironment) {
     KYSEnvironmentDevelopment,  // 开发测试地址
     KYSEnvironmentProduction    // 生产正式地址
 };
+typedef NS_ENUM(NSInteger, KYSApns) {
+    KYSApnsUmeng,         // 友盟推送
+    KYSApnsJPush,         // 极光推送
+    KYSApnsFirebase       // Firebase推送
+};
 /// 大数据上报的回调
 typedef void(^ReportComplete)(BOOL isSuccess,  id _Nullable object, NSString * message);
 /// 心跳将要上报的回调
