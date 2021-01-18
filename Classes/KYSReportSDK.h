@@ -195,7 +195,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param extMap 扩展数据
 + (KYSClick *)modelWithClick:(NSString *)pageId
                      eventId:(nullable NSString *)eventId
-                   eventType:(NSString *)eventType
+                   eventType:(nullable NSString *)eventType
                     targetId:(nullable NSString *)targetId
                   targetName:(nullable NSString *)targetName
                   targetType:(nullable NSString *)targetType
