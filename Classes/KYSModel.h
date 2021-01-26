@@ -57,7 +57,7 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @interface KYSUserInfo : KYSModel
 @property (nonatomic, copy, nullable) NSString * userId;/**< 用户ID*/
 @property (nonatomic, copy, nullable) NSString * userType;/**< 用户类型（webchat，qq，phone），已登录用户必填*/
-@property (nonatomic, copy, nullable) NSMutableArray * userLabels;/**< 用户标签，数组形式上报   exp: ['少儿'，'游戏','动漫'] */
+@property (nonatomic, retain, nullable) NSMutableArray * userLabels;/**< 用户标签，数组形式上报   exp: ['少儿'，'游戏','动漫'] */
 @property (nonatomic, assign) NSTimeInterval userRegisterTime;/**< 用户注册时间，毫秒级的时间戳 */
 @property (nonatomic, copy, nullable) NSString * userRegisterVersion;/**<  用户注册版本号*/
 @property (nonatomic, copy, nullable) NSString * country;/**< 国家*/
