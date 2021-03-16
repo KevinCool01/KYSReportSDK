@@ -32,6 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param host 上报地址
 + (void)runEnvironment:(KYSEnvironment)environment withHost:(NSString *)host;
 
+/// 当被杀死的时候是否保活上报最后一次数据(默认保活，为true)
+/// @param isAlive 是否保活
++ (void)keepAliveWhenKilled:(BOOL)isAlive;
+
 /// 设置心跳周期     
 /// @note 心跳必须设置
 /// @param time 多少时间进行心跳上报 ( 传入 0，则为默认的30s )
@@ -59,6 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 启动SDK，保持SDK的活跃 (SDK配置完成之后，调用此方法，以启动 SDK)
 + (void)alive;
+
+/// 销毁，重置SDK
++ (void)destroy;
 
 #pragma mark -- 设置公共参数
 /// 读取公共参数
@@ -129,6 +136,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 页面某个item滑出屏幕，结束曝光（可自定义曝光的时长阈值）
 + (void)endExposure:(KYSExposure *)exposure withThresholdDuration:(NSTimeInterval)duration;
+
+/// 针对单个曝光对象单独修改其 dataMap 的值
++ (void)setExposureExtMap:(NSString *)value
+                   forKey:(NSString *)key
+                 byPageId:(NSString *)pageId
+                  eventId:(NSString *)eventId
+                 targetId:(NSString *)targetId
+               targetName:(NSString *)targetName
+               targetType:(NSString *)targetType;
+
 
 /// 手动上报曝光数据。
 ///@note SDK在页面结束访问的时候会自动上报当前页面的曝光数据，无需调用此方法，如果需要在某个时刻自己想调用一次，再调用，一般不使用此方法，正常埋点即可
