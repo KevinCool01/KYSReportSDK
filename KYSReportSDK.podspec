@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
   s.author       = { "Kevin Gu" => "gukai@cncoral.com" }
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
   s.social_media_url   = "https://www.jianshu.com/u/2340260ae5ed"
 
   s.source       = { :git => "https://github.com/KevinCool01/KYSReportSDK.git", :tag => "#{s.version}" }
