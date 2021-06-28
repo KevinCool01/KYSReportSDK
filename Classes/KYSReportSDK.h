@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param appKey 数据统计平台配置的给应用的appKey
 + (void)registWithAppKey:(NSString *)appKey;
 
+/// 初始化SDK,，注册AppKey，和自定义的传入的deviceId，(与上面的方法二选一，须传入deviceId)
+/// @note appKey , deviceId 为必须参数，（必须配置）
+/// @param appKey 数据统计平台配置的给应用的appKey
+/// @param deviceId 自定义传入deviceId
++ (void)registWithAppKey:(NSString *)appKey andDeviceId:(NSString *)deviceId;
+
 /// 设置 SDK 的运行环境
 /// @note 必须设置运行环境， KYSEnvironmentNone 不能运行，需要选择开发环境或者生产环境
 /// 测试地址: http://120.205.22.111:9797/pb/
