@@ -42,6 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param isAlive 是否保活
 + (void)keepAliveWhenKilled:(BOOL)isAlive;
 
+/// 当进入后台是否缓存曝光数据，不缓存退出到后台会立即上报，缓存则缓存本地等下一次启动上报
+/// @param isCache 是否缓存曝光数据
++ (void)cacheExposureWhenEnterBackground:(BOOL)isCache;
+
 /// 设置心跳周期     
 /// @note 心跳必须设置
 /// @param time 多少时间进行心跳上报 ( 传入 0，则为默认的30s )
@@ -98,6 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setBaseMap:(nullable NSDictionary *)baseMap;
 + (void)setDeviceType:(nullable NSString *)deviceType;
 + (void)setDeviceToken:(nullable NSData *)deviceToken onParty:(KYSApns)party;
++ (void)setBaseMap:(NSString *)key value:(NSString *)value;
 
 /// 清除用户信息, 当用户退出登录的时候，可能要清除用户的信息
 /// @note 会清除用户的userId, userType, userLabel, userRegisterTime, userRegisterVersion
@@ -156,13 +161,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 手动上报曝光数据。
 ///@note SDK在页面结束访问的时候会自动上报当前页面的曝光数据，无需调用此方法，如果需要在某个时刻自己想调用一次，再调用，一般不使用此方法，正常埋点即可
 ///不可以在 tableView 或者 collectionView 的 willDisplay cell  和  didEndDisplaying cell 的回调方法里调用此方法，在上述方法里调用此接口不合适，有几率会造成crash。
-+ (void)exposureReportWithComplete:(nullable ReportComplete)complete;
++ (void)exposureReportWithPage:(KYSPage *)page complete:(nullable ReportComplete)complete;
 
 /// 滑动一屏上报曝光数据 ( Gilos 有此需求 )
-+ (void)scrollHandleExposureReportWithComplete:(nullable ReportComplete)complete;
++ (void)scrollHandleExposureReportWithPage:(KYSPage *)page complete:(nullable ReportComplete)complete;
 
 /// 下拉刷新上报曝光数据 ( Gilos 有此需求 )
-+ (void)refreshHandleExposureReportWithComplete:(nullable ReportComplete)complete;
++ (void)refreshHandleExposureReportWithPage:(KYSPage *)page complete:(nullable ReportComplete)complete;
 
 /// 页面请求错误，上报一个错误
 + (void)error:(KYSError *)error reportWithComplete:(nullable ReportComplete)complete;
