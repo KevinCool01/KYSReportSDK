@@ -25,5 +25,8 @@ Pod::Spec.new do |s|
   s.libraries = "sqlite3"
   s.vendored_libraries = "Libraries/libKYSReportSDK.a"
   s.dependency "Protobuf"
+  # xcode 12 的环境下需要加上如下配置，xcode 则不需要。因为xcode12 环境下的模拟器也包含此架构
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
