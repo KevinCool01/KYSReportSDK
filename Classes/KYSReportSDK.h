@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param isCache 是否缓存曝光数据
 + (void)cacheExposureWhenEnterBackground:(BOOL)isCache;
 
-/// 设置心跳周期     
+/// 设置心跳周期
 /// @note 心跳必须设置
 /// @param time 多少时间进行心跳上报 ( 传入 0，则为默认的30s )
 /// @param callBack   单次心跳将要上报的回调，返回当前心跳的pageId；返回值传入心跳的扩展数据
@@ -103,6 +103,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setDeviceType:(nullable NSString *)deviceType;
 + (void)setDeviceToken:(nullable NSData *)deviceToken onParty:(KYSApns)party;
 + (void)setBaseMap:(NSString *)key value:(NSString *)value;
+
+/// 外部调用获取一次SSID ，wifi名称
++ (void)getSSID;
 
 /// 清除用户信息, 当用户退出登录的时候，可能要清除用户的信息
 /// @note 会清除用户的userId, userType, userLabel, userRegisterTime, userRegisterVersion
