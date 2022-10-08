@@ -102,6 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setBaseMap:(nullable NSDictionary *)baseMap;
 + (void)setDeviceType:(nullable NSString *)deviceType;
 + (void)setDeviceToken:(nullable NSData *)deviceToken onParty:(KYSApns)party;
++ (void)setThirdRegistionID:(NSString *)registionID onParty:(KYSApns)party;
 + (void)setBaseMap:(NSString *)key value:(NSString *)value;
 
 /// 外部调用获取一次SSID ，wifi名称
@@ -177,6 +178,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 自定义上报。上报一个自定义消息
 + (void)customer:(KYSCustomer *)customer reportWithComplete:(nullable ReportComplete)complete;
+
+/// 文献语料上报。上报一个文献语料消息
++ (void)corpus:(KYSCorpus *)corpus reportWithComplete:(ReportComplete)complete;
 
 #pragma mark -- 初始化 model
 

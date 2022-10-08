@@ -111,4 +111,8 @@ typedef NSDictionary * _Nullable(^HeartWillReportCallBack)(NSString * pageId);
 @property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据map {goodsId:123,goodsName:oppo手机,goodsPrice:2300} */
 @end
 
+@interface KYSCorpus : KYSModel
+@property (nonatomic, copy) NSString * eventType;/**< 事件类型*/
+@property (nonatomic, copy, nullable) NSDictionary * extMap;/**< 扩展数据map {goodsId:123,goodsName:oppo手机,goodsPrice:2300} */
+@end
 NS_ASSUME_NONNULL_END
